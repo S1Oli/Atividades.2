@@ -1,0 +1,53 @@
+public class aluno {
+    String nome;
+    int matricula;
+    double notaAv1;
+    double notaAv2;
+
+    void mostrandoDados() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Matricula: " + matricula);
+        System.out.println("Nota Av1: " + notaAv1);
+        System.out.println("Nota Av2: " + notaAv2);
+
+    }
+
+    double calcularMedia() {
+        return (notaAv1 + notaAv2) / 2;
+    }
+
+    void verificarAprovacao() {
+        double media = calcularMedia();
+        if (media >= 7) {
+            System.out.println("Aprovado com média: " + media);
+        } else {
+            System.out.println("Reprovado com média: " + media);
+
+            Aluno aluno1 = new Aluno();
+            aluno1.nome = "Alan";
+            aluno1.matricula = 0628;
+            aluno1.notaAv1 = 6.5;
+            aluno1.notaAv2 = 8.0;
+
+            Aluno aluno2 = new Aluno();
+            aluno2.nome = "Bryan";
+            aluno2.matricula = 0421;
+            aluno2.notaAv1 = 7.0;
+            aluno2.notaAv2 = 6.0;
+
+            System.out.println("Dados do Aluno 1: ");
+            aluno1.mostrandoDados();
+
+            System.out.println("Dados do Aluno 2: ");
+            aluno2.mostrandoDados();
+
+            //Atualizando nota do aluno2
+            aluno2.notaAv2 = 9.9;
+
+            System.out.println("\nResultado final: ");
+            aluno1.verificarAprovacao();
+            aluno2.verificarAprovacao();
+           
+        }
+    }
+}
