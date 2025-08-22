@@ -1,0 +1,40 @@
+public class Carro {
+    public static void main(String[] args) {
+    String marca;
+    String modelo;
+    int ano;
+
+     Carro( marca, modelo, ano) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+
+    public void mostrarinfo() {
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Ano: " + ano);
+    }
+
+    public void ligarCarro() {
+        System.out.println("O carro " + marca + " " + modelo + " está ligado!");
+
+        Carro carro1 = new Carro();
+        carro1.mostrarInfo();
+        carro1.ligarCarro();
+
+        Carro carro2 = new Carro();
+        carro2.mostrarInfo();
+        carro2.ligarCarro();
+        
+        carro2.marca = "Chevrolet";
+        carro2.modelo = "Onix";
+        carro2.ano = 2025;
+
+        System.out.println("\nInformações do carro 2 após alteração");
+        carro2.mostrarinfo();
+
+        carro2.ligarCarro();
+      }
+   }
+}
