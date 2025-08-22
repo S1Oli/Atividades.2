@@ -1,0 +1,46 @@
+public class ContaBancaria {
+    String numeroConta;
+    String titular;
+    double saldo;
+
+    void depositar(double valor) {
+        saldo += valor;
+    }
+
+    void sacar(double valor) {
+        if (valor <= saldo) {
+            saldo -= valor;
+        } else {
+            System.out.println("Saldo insuficiente.");
+        }
+    }
+
+    void consultarSaldo() {
+        System.out.println("conta: " + snumeroConta + ", titular: " + titular + ", saldo: " + saldo);
+
+        ContaBancaria conta1 = new ContaBancaria();
+        conta1.numeroConta = "2821";
+        conta1.titular = "Rafis Rodrigues";
+        conta1.saldo = 6000.0;
+
+        ContaBancaria conta2 = new ContaBancaria();
+        conta2.numeroConta = "0604";
+        conta2.titular = "Bryan Oliveira";
+        conta2.saldo = 800.0;
+
+        //testando com a conta1
+        conta1.consultarSaldo();
+        conta1.depositar(400.0);
+        conta1.consultarSaldo();
+        conta1.sacar(1000.0);
+        conta1.consultarSaldo();
+
+        //testando com a conta2
+        conta2.consultarSaldo();
+        conta2.depositar(900.0);
+        conta2.consultarSaldo();
+        conta2.sacar(10000.0);
+        //vai mostrar "Saldo insuficiente."
+
+    }
+}
